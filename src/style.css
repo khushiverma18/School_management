@@ -1,0 +1,40 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Responsive Images & Media */
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* General Container */
+.container {
+  padding: 1rem;
+  max-width: 100%;
+}
+
+/* Mobile Specific (320px) */
+@media (max-width: 320px) {
+  body {
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 0.5rem;
+  }
+}

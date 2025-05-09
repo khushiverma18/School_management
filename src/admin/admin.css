@@ -1,0 +1,505 @@
+
+/* General Container */
+.admin-panel-container {
+  padding: 1rem;
+  background-color: #f3f4f6;
+  min-height: 90vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+/* Title Styling */
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Grid Layout for Action Cards */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Action Card Base Style */
+.quick-action-card {
+  background: linear-gradient(135deg, #e0f2fe, #ffffff);
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* Card Hover Effect */
+.quick-action-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
+}
+
+/* Link Style */
+.quick-action-link {
+  display: block;
+  padding: 2rem;
+  text-decoration: none;
+  color: #1f2937;
+  height: 100%;
+}
+
+/* Card Title */
+.quick-action-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e40af;
+  transition: color 0.3s ease;
+}
+
+/* Card Description */
+.quick-action-description {
+  font-size: 1rem;
+  color: #374151;
+  transition: color 0.3s ease;
+}
+
+/* Hover Text Colors */
+.quick-action-link:hover .quick-action-title {
+  color: #2563eb;
+}
+
+.quick-action-link:hover .quick-action-description {
+  color: #1e3a8a;
+}
+
+/* Responsive Padding */
+@media (max-width: 640px) {
+  .admin-panel-container {
+    padding: 1rem;
+  }
+
+  .quick-action-link {
+    padding: 1.5rem;
+  }
+}
+
+
+/* Container for the add student form */
+.admin-student-container {
+  padding: 2rem;
+  background-color: #f3f4f6;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 3rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading styling */
+.admin-student-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Form Styling */
+.admin-student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input fields */
+.admin-student-form input {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #374151;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input focus effect */
+.admin-student-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+}
+
+/* Submit button */
+.admin-student-form button {
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button hover effect */
+.admin-student-form button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 640px) {
+  .admin-student-container {
+    padding: 1rem;
+    margin: 2rem 1rem;
+  }
+}
+/* Container for the attendance form */
+.admin-student-container {
+  padding: 2rem;
+  background-color: #f3f4f6;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 3rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading styling */
+.admin-student-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Button Group Styling (for selecting role) */
+.admin-student-container div {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Style for the toggle buttons (Students / Teachers) */
+.admin-student-container button {
+  padding: 0.75rem 1.5rem;
+  background: #4f46e5;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.admin-student-container button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.admin-student-container button:hover:not(:disabled) {
+  background: #4338ca;
+  transform: translateY(-3px);
+}
+
+/* Date Picker Styling */
+.date-picker {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus Effect for Date Picker */
+.date-picker:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+}
+
+
+.admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background-color: #f9fafb;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  min-height: 100px;
+  position: relative;
+}
+
+/* Force info block to grow and allow spacing */
+.admin-item div:first-child {
+  flex: 1;
+}
+
+/* Button group always aligns right */
+.attendance-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  min-width: 180px;
+  justify-content: flex-end;
+}
+
+.admin-student-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.admin-student-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #2c3e50;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-form label {
+  font-weight: 600;
+  color: #34495e;
+}
+
+.admin-form input,
+.admin-form select {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  transition: border 0.2s ease;
+}
+
+.admin-form input:focus,
+.admin-form select:focus {
+  border-color: #3498db;
+  outline: none;
+  background-color: #fff;
+}
+
+.admin-form button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.admin-form button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+.admin-form button:active {
+  transform: scale(0.98);
+}
+
+/* Container styling */
+.admin-event-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Section titles */
+.admin-event-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #2c3e50;
+}
+
+.admin-event-container h3 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #34495e;
+}
+
+/* Form layout */
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.event-form input,
+.event-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #dcdde1;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: border 0.3s;
+}
+
+.event-form input:focus,
+.event-form textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: #ffffff;
+}
+
+/* Button styling */
+.event-form button {
+  align-self: flex-start;
+  padding: 0.6rem 1.4rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event-form button:hover {
+  background-color: #2980b9;
+}
+
+/* Event card layout */
+.event-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+/* Individual card */
+.event-card {
+  background: #84aee0;
+  border-left: 5px solid #3498db;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card content */
+.event-title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.event-date {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.event-description {
+  font-size: 1rem;
+  color: #34495e;
+}
+/* Grid container */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Individual event card */
+.event-card {
+  background-color: #cfe2ef;
+  border-left: 5px solid #3498db;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Event text */
+.event-card h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.event-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+}
+
+.event-description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Container styling */
+.admin-student-containers {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Heading style */
+.admin-student-containers h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Button styling */
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0056b3, #004494);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.4);
+}

@@ -1,0 +1,418 @@
+
+h2{
+  margin:14px;
+  color: #1e3a8a;
+}
+
+/* Header */
+.text-xl {
+  font-size: 1.25rem;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.text-green-600 {
+  color:#4f46e5;
+}
+
+/* Select dropdown */
+.dashboard-select {
+  width: 90%;
+  padding: 0.6rem;
+  margin: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+.dashboard-select:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+/* Attendance list */
+.student-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  width: 90%;
+  margin-left: 1.5vh;
+}
+
+.student-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: #dfdef4;
+  border-left: 5px solid #2916a3;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.student-item div {
+  display: flex;
+  gap: 22rem;
+  flex-wrap: wrap;
+}
+
+.student-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.student-item span {
+  font-weight: 600;
+  color: #111827;
+}
+
+
+
+
+
+.student-item:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.2rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.student-lists {
+  background-color: #d9d9f5;
+  border-left: 4px solid #1e10b9; /* Tailwind green-500 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.3s ease-in-out;
+}
+
+.student-lists:hover {
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+  transform: translateY(-4px);
+}
+
+.student-lists p {
+  margin: 0.4rem 0;
+  color: #374151; /* gray-700 */
+}
+
+.student-lists strong {
+  font-size: 1rem;
+  color: #111827; /* gray-900 */
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.teacher-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  width: 90%;
+  margin-left: 1.5vh;
+}
+
+.admin-item {
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: #dfdef4;
+  border-left: 5px solid #2916a3;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+
+.admin-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.admin-item span {
+  font-weight: 600;
+  color: #111827;
+}
+
+
+
+
+
+.admin-item:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+/* Main container for TeacherAdmin */
+
+
+/* Section heading in TeacherAdmin */
+.teacher-admin-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #4f46e5; /* Indigo-600 */
+  margin-bottom: 1.5rem;
+  text-align: left;
+  padding-left: 0.5rem;
+  border-left: 4px solid #6366f1; /* Indigo-500 */
+}
+
+/* Teacher list container */
+.teacher-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  width: 90%;
+  margin-left: 1.5vh;
+}
+
+/* Individual teacher card */
+.teacher-admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: #e7e8fb;
+  border-left: 5px solid #4f46e5;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Content inside teacher card */
+
+/* Typography for name and role */
+.teacher-admin-name,
+.teacher-admin-role {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.teacher-admin-name span,
+.teacher-admin-role span {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Hover effect for teacher cards */
+.teacher-admin-item:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+/* Section heading in TeacherAdmin */
+.teacher-admin-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #4f46e5; /* Indigo-600 */
+  margin-bottom: 1.5rem;
+  text-align: left;
+  padding-left: 0.5rem;
+  border-left: 4px solid #6366f1; /* Indigo-500 */
+}
+
+/* Teacher list container */
+.student-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  width: 90%;
+  margin-left: 1.5vh;
+}
+
+/* Individual teacher card */
+.student-admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: #e7e8fb;
+  border-left: 5px solid #4f46e5;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Content inside teacher card */
+
+/* Typography for name and role */
+.student-admin-name,
+.student-admin-class {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.student-admin-name span,
+.student-admin-class span {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Hover effect for teacher cards */
+.student-admin-item:hover {
+  transform: scale(1.015);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+.module-placeholder {
+  background: #e0e7ff; /* Light indigo */
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 5px solid #4f46e5; /* Indigo-600 */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Make the module placeholder 2 columns */
+.module-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 1.5rem; /* Space between cards */
+  margin-bottom: 2rem;
+}
+
+/* Module styles based on type */
+.module-placeholder.attendance {
+  background: #d1fae5; /* Light green */
+  color: #065f46; /* Dark green */
+}
+
+.module-placeholder.events {
+  background: #fef9c3; /* Light yellow */
+  color: #9a7e2d; /* Dark yellow */
+}
+
+.module-placeholder.results {
+  background: #fef2f2; /* Light pink */
+  color: #9b1c1c; /* Dark red */
+}
+
+.module-placeholder.reports {
+  background: #e0e7ff; /* Light indigo */
+  color: #4f46e5; /* Indigo */
+}
+
+/* Hover effect for module placeholders */
+.module-placeholder:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive design: stack cards on smaller screens */
+@media (max-width: 768px) {
+  .module-container {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+}
