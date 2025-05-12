@@ -28,19 +28,43 @@ export const AppProvider = ({ children }) => {
   const tempStudents = [
     { id: 1, name: 'Khushi', Class: '9' },
     { id: 2, name: 'Radhika', Class: '10' },
-    { id: 3, name: 'Priya', Class: '10' },
-    { id: 4, name: 'Aayush', Class: '10' },
+    { id: 3, name: 'Priya', Class: '11' },
+    { id: 4, name: 'Aayush', Class: '12' },
     { id: 5, name: 'Simmi', Class: '10' },
     { id: 6, name: 'Mukesh', Class: '10' },
+    { id: 7, name: 'Khushi', Class: '9' },
+    { id: 8, name: 'Radhika', Class: '10' },
+    { id: 9, name: 'Muskan', Class: '11' },
+    { id: 10, name: 'Aayush', Class: '12' },
+    { id: 11, name: 'Simmi', Class: '8' },
+    { id: 12, name: 'Vishwash', Class: '8' },
+     { id: 13, name: 'Khushi', Class: '7' },
+    { id: 21, name: 'Radhika', Class: '10' },
+    { id: 31, name: 'Priya', Class: '7' },
+    { id: 41, name: 'Aayush', Class: '12' },
+    { id: 51, name: 'Simmi', Class: '7' },
+    { id: 61, name: 'Monika', Class: '10' },
+    { id: 71, name: 'Khushi', Class: '9' },
+    { id: 81, name: 'Radhika', Class: '10' },
+    { id: 91, name: 'Aniket', Class: '11' },
+    { id: 101, name: 'Aayush', Class: '12' },
+    { id: 111, name: 'Ayushi', Class: '8' },
+    { id: 121, name: 'Mukesh', Class: '8' },
   ];
 
   const tempteach = [
-    { id: 100, name: 'Khushi', subject: 'Maths' },
-    { id: 102, name: 'Muskan', subject: 'English' },
-    { id: 103, name: 'Priya', subject: 'Hindi' },
-    { id: 104, name: 'Aayush', subject: 'Maths' },
-    { id: 105, name: 'Simmi', subject: 'Chemistry' },
-    { id: 106, name: 'Mukesh', subject: 'Physics' },
+    { id: 100, name: 'Khushi Verma', subject: 'Maths' },
+    { id: 102, name: 'Muskan Malik', subject: 'English' },
+    { id: 103, name: 'Priya Khatana', subject: 'Hindi' },
+    { id: 104, name: 'Aayush Sharwat', subject: 'Geography' },
+    { id: 105, name: 'Lokesh Sharma', subject: 'Chemistry' },
+    { id: 106, name: 'Jitender verma', subject: 'Physics' },
+      { id: 107, name: 'Monika Choudhary', subject: 'Art' },
+        { id: 108, name: 'Dinesh Chandela', subject: 'Biology' },
+          { id: 109, name: 'Mummta Singh', subject: 'Civices' },
+           { id: 110, name: 'Rupak Sharma', subject: 'History' },
+            { id: 112, name: 'Pankaj Yadav', subject: 'Ecommers' },
+             { id: 113, name: 'Boby malik', subject: 'Dance' },
   ];
 
   const defaultEvents = [
@@ -50,6 +74,7 @@ export const AppProvider = ({ children }) => {
 
   const defaultResults = [
     { id: 1, studentId: 1, subject: 'Math', marks: 85 },
+     { id: 3, studentId: 1, subject: 'Hindi', marks: 80 },
     { id: 2, studentId: 2, subject: 'English', marks: 92 },
   ];
 

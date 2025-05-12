@@ -63,9 +63,18 @@ const AIReportGenerator = () => {
   };
 
   return (
-    <div className="admin-student-containers">
+    <div className="report-cover">
+      <div className="left-panel">
+        <div className="logo-placeholder">🏫</div>
+        <h1 className="year">2025</h1>
+        <h1 className="annual">ANNUAL</h1>
+        <h1 className="report">REPORT</h1>
+        <div className="admin-student-containers">
       <h2><FaBrain /> AI-Powered Report Generator</h2>
       <button onClick={generatePDF} className="btn-primary"><FaDownload /> Generate Report PDF</button>
+    </div>
+      </div>
+      <div className="right-panel"></div>
     </div>
   );
 };

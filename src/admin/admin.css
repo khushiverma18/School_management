@@ -2,8 +2,7 @@
 /* General Container */
 .admin-panel-container {
   padding: 1rem;
-  background-color: #f3f4f6;
-  min-height: 90vh;
+  min-height: 80vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden;
 }
@@ -466,40 +465,692 @@
   line-height: 1.4;
 }
 
-/* Container styling */
-.admin-student-containers {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
+.admin-student-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
   background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-student-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.admin-student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-student-form input,
+.admin-student-form textarea,
+.admin-student-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.admin-student-form button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-student-form button:hover {
+  background-color: #45a049;
+}
+
+
+.admin-dashboard {
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.dashboard-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn.blue {
+  background-color: #007bff;
+}
+.btn.green {
+  background-color: #28a745;
+}
+.btn.yellow {
+  background-color: #ffc107;
+  color: black;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  align-items: center;
+  color: #333;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.card-content h1 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.progress-bar {
+  height: 5px;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.blue { background-color: #007bff; }
+.green { background-color: #28a745; }
+.yellow { background-color: #ffc107; }
+.red { background-color: #dc3545; }
+
+.light-blue { background-color: #eaf2ff; }
+.light-green { background-color: #e6f7ed; }
+.light-yellow { background-color: #fff9e6; }
+.light-red { background-color: #ffeaea; }
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.calendar-icon {
+  background-color: #007bff;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 24 24" ... />');
+}
+
+.graph-icon {
+  background-color: #28a745;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 24 24" ... />');
+}
+
+.user-icon {
+  background-color: #dc3545;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 24 24" ... />');
+}
+
+
+/* General Admin Container Styling */
+.admin-attendance-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: opacity 0.3s ease-in-out; /* For potential future loading states */
+}
+
+.admin-attendance-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+/* Role Selector Styling */
+.role-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  gap: 10px; /* Space between buttons */
+}
+
+.role-selector button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: 1px solid #007bff;
+  background-color: #fff;
+  color: #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+}
+
+.role-selector button:hover:not(:disabled) {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.role-selector button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.role-selector button:disabled {
+  background-color: #007bff;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Date Picker Styling */
+.date-picker-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.date-picker {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* List Styling */
+.admin-attendance-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 1; /* Start with full opacity */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.admin-attendance-list.fade-out {
+  opacity: 0;
+}
+.admin-attendance-list.fade-in {
+  opacity: 1;
+}
+
+
+.admin-attendance-item {
+  background-color: #fff;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  animation: fadeInItem 0.5s ease-out forwards;
+}
+
+@keyframes fadeInItem {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.admin-attendance-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.person-info {
+  flex-grow: 1;
+}
+
+.person-info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.person-info .person-name {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.person-info .person-detail {
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Status Text Styling */
+.status-text {
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  display: inline-block; /* To allow padding and background */
+  min-width: 80px; /* Ensure consistent width */
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.status-text.present {
+  background-color: #e6ffed;
+  color: #28a745; /* Green */
+  border: 1px solid #c3e6cb;
+}
+
+.status-text.absent {
+  background-color: #ffebee;
+  color: #dc3545; /* Red */
+  border: 1px solid #f5c6cb;
+}
+
+.status-text.not-marked {
+  background-color: #f0f0f0;
+  color: #6c757d; /* Gray */
+  border: 1px solid #e0e0e0;
+}
+
+/* Action Buttons Styling */
+.action-buttons button {
+  padding: 8px 15px;
+  margin-left: 10px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.action-buttons button.present-btn {
+  background-color: #28a745;
+  color: white;
+}
+.action-buttons button.present-btn:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.action-buttons button.absent-btn {
+  background-color: #dc3545;
+  color: white;
+}
+.action-buttons button.absent-btn:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+.action-buttons button:disabled {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.action-buttons button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* No users message */
+.no-users-message {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  font-style: italic;
+}
+
+
+/* General Admin Form Container */
+.admin-form-container {
+  max-width: 700px; /* Adjusted for potentially wider form */
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-form-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+/* Form styling */
+.admin-entity-form { /* More generic name for reuse */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Spacing between form grid and button */
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Space between label and input */
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1; /* Make this group span all columns */
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.95em;
+}
+
+.form-group .required-asterisk {
+  color: #dc3545; /* Red asterisk for required fields */
+  margin-left: 2px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1em;
+  box-sizing: border-box; /* Important for padding and width */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 80px;
+}
+
+.submit-button {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.05em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  align-self: center; /* Center button if form is not full width */
+  min-width: 150px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+.submit-button:active {
+  transform: translateY(1px);
+}
+
+/* Error and Success Messages */
+.form-error-message,
+.form-success-message {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.95em;
+}
+
+.form-error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.form-success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+
+
+/* src/components/AIReportCover.css */
+
+.report-cover {
+  display: flex;
+  height: 85vh;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: white;
+}
+
+.left-panel {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.logo-placeholder {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.company-name {
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.year {
+  font-size: 40px;
+  color: #111;
+  margin: 0;
+}
+
+.annual {
+  font-size: 48px;
+  color: #0070c0;
+  font-weight: bold;
+  margin: 0;
+}
+
+.report {
+  font-size: 48px;
+  color: #111;
+  font-weight: bold;
+  margin: 0;
+}
+
+.right-panel {
+  width: 40%;
+  background: linear-gradient(120deg, #005baa, #0070c0, #60b3f3);
+  clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+
+/* Main Container */
+.admin-event-container {
+  padding: 40px 20px;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Headings */
+.admin-event-container h2,
+.admin-event-container h3 {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Form Styling */
+.event-form {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.event-form input,
+.event-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.event-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.event-form button {
+  background-color: #004b91;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.event-form button:hover {
+  background-color: #006fcd;
+}
+
+/* EVENT GRID SECTION ONLY */
+.event-grid {
+  background: linear-gradient(to right, #003b6f, #005fa3, #007dd0, #009eea);
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  color: white;
+}
+
+/* Grid Layout */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.event-grid h3{
+  color: white;
+}
+/* Event Card */
+.event-card {
+  background-color: white;
+  color: #333;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Header */
+.event-card h4 {
+  margin: 0;
+  padding: 12px;
+  background-color: #005fa3;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+
+.event-card h4::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0 10px;
+  border-style: solid;
+  border-color: #005fa3 transparent transparent transparent;
+}
+
+/* Card Body */
+.event-card p {
+  padding: 10px 16px;
+  font-size: 0.95rem;
+}
+
+.event-date {
+  font-weight: bold;
+  color: #007dd0;
+}
+
+.event-description {
+  color: #555;
+}
+
+
+.class-filter {
+  margin: 20px auto;
   text-align: center;
 }
 
-/* Heading style */
-.admin-student-containers h2 {
-  color: #2c3e50;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+.class-filter label {
+  margin-right: 10px;
+  font-weight: bold;
 }
 
-/* Button styling */
-.btn-primary {
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  color: white;
+.class-filter select {
+  padding: 8px 12px;
   font-size: 1rem;
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, #0056b3, #004494);
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.4);
+  border-radius: 4px;
 }

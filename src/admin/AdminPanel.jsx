@@ -4,11 +4,58 @@ import './admin.css'; // Import the CSS file
 
 const AdminPanel = () => {
   return (
-    <div className="admin-panel-container">
+     <div className="admin-dashboard">
+      <h1 className="main-title">Admin Dashboard</h1>
+
+      <div className="dashboard-buttons">
+        <Link to="/admin/teachers" className="btn blue">Add Teacher</Link>
+        <Link to="/admin/student" className="btn green">Add Student</Link>
+        <Link to="/admin/events" className="btn yellow">Schedule Event</Link>
+      </div>
+
+      <div className="dashboard-cards">
+        <div className="card light-blue">
+          <div className="card-content">
+            <h3>Attendance Rate</h3>
+            <h1>91%</h1>
+            <div className="progress-bar blue" />
+          </div>
+          <div className="card-icon calendar-icon" />
+        </div>
+
+        <div className="card light-green">
+          <div className="card-content">
+            <h3>Avg Performance</h3>
+            <h1>B+</h1>
+            <div className="progress-bar green" />
+          </div>
+          <div className="card-icon graph-icon" />
+        </div>
+
+        <div className="card light-yellow">
+          <div className="card-content">
+            <h3>Upcoming Events</h3>
+            <h1>3</h1>
+            <div className="progress-bar yellow" />
+          </div>
+          <div className="card-icon calendar-icon" />
+        </div>
+
+        <div className="card light-red">
+          <div className="card-content">
+            <h3>Tasks Due</h3>
+            <h1>5</h1>
+            <div className="progress-bar red" />
+          </div>
+          <div className="card-icon user-icon" />
+        </div>
+      </div>
+    
+ 
 
       {/* Main Content */}
-      <main className="main-content">
-        <h1 className="main-title">Admin Dashboard</h1>
+      
+        <h2>Feature Modules</h2>
 
         {/* Quick Actions */}
         <div className="quick-actions">
@@ -54,8 +101,9 @@ const AdminPanel = () => {
             </Link>
           </div>
         </div>
-      </main>
+     
     </div>
+  
   );
 };
 

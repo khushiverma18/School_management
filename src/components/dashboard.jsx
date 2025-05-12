@@ -1,12 +1,16 @@
 import React from 'react';
 import './component.css';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, AreaChart, Area } from 'recharts';
+import  { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { FaUserGraduate, FaChalkboardTeacher, FaSchool, FaRupeeSign } from 'react-icons/fa';
 
 const summaryData = [
-  { title: 'STUDENTS', value: 3256, color: '#8B5CF6' },
-  { title: 'EMPLOYEES', value: 68, color: '#F97316' },
-  { title: 'CLASS', value: 12, color: '#06B6D4' },
-  { title: 'REVENUE', value: '3,47,00', color: '#22C55E' },
+  { title: 'STUDENTS', value: 3256, color: '#8B5CF6', icon: <FaUserGraduate /> },
+  { title: 'EMPLOYEES', value: 68, color: '#F97316', icon: <FaChalkboardTeacher /> },
+  { title: 'CLASS', value: 12, color: '#06B6D4', icon: <FaSchool /> },
+  { title: 'REVENUE', value: '3,47,00', color: '#22C55E', icon: <FaRupeeSign /> },
 ];
 
 const pieStats = [
@@ -46,16 +50,28 @@ const batchData = [
 ];
 
 const Dashboard = () => {
+   const [value, setValue] = useState(new Date());
+   const handleDateChange = (date) => {
+    setValue(date);
+    // Example: AI feature - trigger reminder suggestions or past pattern analysis
+    console.log("You selected:", date);
+  };
   return (
     <div className="dashboard-containe">
-      <div className="chart-grid">
-        {summaryData.map((item) => (
-          <div className="mini-card" key={item.title} style={{ borderLeftColor: item.color }}>
-            <h4>{item.title}</h4>
-            <p>{item.value}</p>
-          </div>
-        ))}
+   <div className="chart-grid">
+  {summaryData.map((item) => (
+    <div className="mini-card" key={item.title}>
+      <div className="icon-circle" style={{ backgroundColor: item.color }}>
+        {item.icon}
       </div>
+      <div className="card-content">
+        <h4>{item.title}</h4>
+        <p>{item.value}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
 
       <h3 className="section-title">Daily Attendance Overview</h3>
       <AreaChart width={600} height={200} data={attendanceData}>
@@ -75,12 +91,41 @@ const Dashboard = () => {
           </PieChart>
         ))}
       </div>
+     <div className='dashboard-row'>
+      <div className="calendar-box-ai">
+      <h4>Smart Calendar</h4>
+      <Calendar onChange={handleDateChange} value={value} />
+      <p>Selected Date: {value.toDateString()}</p>
+    </div>
 
-      <div className="calendar-box">
-        <h4>Calendar</h4>
-        <p>April 2019 (Mock Calendar)</p>
+    <div className="course-statistics-card">
+      <h3 className="card-title">Course Statistics</h3>
+
+      <div className="stat-row">
+        <span className="label">Done</span>
+        <div className="progress-bar">
+          <div className="fill done" style={{ width: '45%' }}></div>
+        </div>
+        <span className="percent">45%</span>
       </div>
 
+      <div className="stat-row">
+        <span className="label">On Progress</span>
+        <div className="progress-bar">
+          <div className="fill progress" style={{ width: '85%' }}></div>
+        </div>
+        <span className="percent">85%</span>
+      </div>
+
+      <div className="stat-row">
+        <span className="label">To Do</span>
+        <div className="progress-bar">
+          <div className="fill todo" style={{ width: '32%' }}></div>
+        </div>
+        <span className="percent">32%</span>
+      </div>
+    </div>
+</div>
       <h3 className="section-title">Student Fees Details</h3>
       <table className="fees-table">
         <thead>

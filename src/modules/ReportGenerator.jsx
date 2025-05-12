@@ -2,16 +2,22 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/contexts';
 import './modules.css';
 
-// Placeholder components if not yet implemented
-const AttendanceModule = () => <div className="module-placeholder attendance">Attendance Module Enabled</div>;
-const EventsModule = () => <div className="module-placeholder events">Events Module Enabled</div>;
-const ResultsModule = () => <div className="module-placeholder results">Results Module Enabled</div>;
-const ReportsModule = () => <div className="module-placeholder reports">Reports Module Enabled</div>;
-
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
+} from 'recharts';
 
 const ModuleReport = () => {
   const { students = [], teachers = [], attendanceRecords = {}, results = [], enabledModules = {} } = useContext(AppContext);
   const [view, setView] = useState('students');
+  const [metric, setMetric] = useState('Attendance %');
+  const [timeframe, setTimeframe] = useState('Last Month');
+
+  const data = [
+    { week: 'Week 1', value: 97 },
+    { week: 'Week 2', value: 90 },
+    { week: 'Week 3', value: 94 },
+    { week: 'Week 4', value: 91 },
+  ];
 
   const getAttendanceRate = (id) => {
     const records = attendanceRecords[id];
@@ -34,14 +40,45 @@ const ModuleReport = () => {
   };
 
   return (
-    <div className="main-t">
-       <div className="module-container">
+    <div className="main-re">
+            <div className="left-panel">
+      <h2>Report</h2>
+      {/* Module Toggles */}
+      <div className="module-container">
         {enabledModules.attendance && <div className="module-placeholder attendance">Attendance Module Enabled</div>}
         {enabledModules.events && <div className="module-placeholder events">Events Module Enabled</div>}
         {enabledModules.results && <div className="module-placeholder results">Results Module Enabled</div>}
         {enabledModules.reports && <div className="module-placeholder reports">Reports Module Enabled</div>}
       </div>
 
+      {/* Performance Metrics */}
+      <div className="performance-container">
+        <div className="performance-header">
+          <h2>Performance Metrics</h2>
+          <div className="dropdowns">
+            <select value={metric} onChange={e => setMetric(e.target.value)}>
+              <option>Attendance %</option>
+              <option>Grade Avg</option>
+            </select>
+            <select value={timeframe} onChange={e => setTimeframe(e.target.value)}>
+              <option>Last Month</option>
+              <option>This Month</option>
+            </select>
+          </div>
+        </div>
+
+        <ResponsiveContainer width="100%" height={250}>
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="week" />
+            <YAxis domain={[0, 100]} />
+            <Tooltip />
+            <Line type="monotone" dataKey="value" stroke="#3b82f6" strokeWidth={2} dot={{ r: 4 }} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Report Summary */}
       <h2>Report Summary</h2>
 
       <select
@@ -81,7 +118,10 @@ const ModuleReport = () => {
           </ul>
         )
       )}
+      </div>
+      <div className="right-panel"></div>
     </div>
+   
   );
 };
 

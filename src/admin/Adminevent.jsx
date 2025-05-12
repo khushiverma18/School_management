@@ -40,16 +40,17 @@ const AdminEvents = () => {
         />
         <button type="submit">Add Event</button>
       </form>
-
-      <h3>Upcoming Events</h3>
 <div className="event-grid">
+      <h3>Upcoming Events</h3>
   {events.map(event => (
     <div key={event.id} className="event-card">
       <h4>{event.title}</h4>
       <p className="event-date">{event.date}</p>
       <p className="event-description">{event.description}</p>
     </div>
+  
   ))}
+  
 </div>
     </div>
   );
